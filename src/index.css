@@ -7,3 +7,70 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
+*{
+  margin: 0;
+
+}
+.container{
+  width: 60%;
+  margin: 0 auto;
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+}
+table{
+  width: 100%;
+  table-layout: auto;
+  border: none;
+  border-collapse: collapse;
+
+}
+tr{
+  height: 60px;
+  font-size: 1.2rem;
+  
+}
+
+.head{
+  font-size: 1.5rem;
+  background-color: blue;
+  padding: 4%;
+}
+button{
+ min-width: 100px;
+  font-size: 1.5rem;
+  padding: 2%;
+  margin: .5rem ;
+}
+.pages-btn{
+  font-size: 1rem;
+  padding: 1%;
+}
+.delete-btn{
+  background-color: crimson;
+  color: white;
+}
+input{
+  font-size: 1.2rem;
+}
+input[type='checkbox']{
+  width: 20px;
+  height: 20px;
+  margin: 0.8rem;
+}
+button:hover{
+  transform: scale(1.1);
+}
+.page{
+  text-align: center;
+}
+.pages-btn:hover{
+  background-color: cadetblue;
+  color: crimson;
+}
+tr:nth-child(even) {background: #CCC}
+tr:nth-child(odd) {background: rgb(173, 160, 160)}
+
+@media (max-width:800px){
+  .container{
+    width: 100%;
+  }
+}

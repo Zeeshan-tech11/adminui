@@ -8,14 +8,14 @@ function Pages(props) {
         pagesarray.push(index)
     }
   return (
-    <div>
-      <div>
+    
+      <div className='page'>
         {pagesarray.map((value,idx)=>{
-          return <button key={idx} value={value} onClick={(e)=>{handleVisiblePage(e)}}>{value}</button>
+          return <button className='pages-btn' key={idx} value={value} onClick={(e)=>{handleVisiblePage(e)}}>{value}</button>
         })}
          
       </div>
-    </div>
+    
   )
 }
 

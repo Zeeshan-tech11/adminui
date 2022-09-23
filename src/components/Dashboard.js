@@ -107,14 +107,14 @@ checkAllUsers=(e)=>{
 render(){
  let {pages,Users,page,selectedIds,checkedTop}=this.state
     return (
-        <div>
+        <div className='container'>
             <table>
-                <tr>
-                    <td><input type="checkbox"  onChange={(e)=>this.checkAllUsers(e)} checked={checkedTop}></input></td>
-                    <td>Name</td>
-                    <td>Email</td>
-                    <td>Role</td>
-                    <td>Actions</td>
+                <tr className='head'>
+                    <th><input type="checkbox"  onChange={(e)=>this.checkAllUsers(e)} checked={checkedTop}></input></th>
+                    <th>Name</th>
+                    <th>Email</th>
+                    <th>Role</th>
+                    <th>Actions</th>
                 </tr>
                {Users.slice(page*10,page*10+10).map(user=>{ 
                  return <UserDetails user={user} key={user.id}
@@ -125,8 +125,8 @@ render(){
                })}
                 
             </table>
-          <button onClick={(e)=>this.deleteAll(e)}>Delete Selected</button>
-           <Pages pages={pages} 
+          <button className='delete-btn' onClick={(e)=>this.deleteAll(e)}>Delete Selected</button>
+           <Pages  pages={pages} 
            handleVisiblePage={this.handleVisiblePage}
             />   
         </div>
