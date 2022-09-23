@@ -1,8 +1,8 @@
-import Table from "./components/Table";
+import Dashboard from "./components/Dashboard";
 function App() {
   return (
     <div className="App">
-      <Table />
+      <Dashboard />
      </div>
   );
 }
