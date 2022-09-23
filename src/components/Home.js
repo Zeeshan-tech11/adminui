@@ -18,8 +18,13 @@ function Home(props) {
       }
     }
     const setChecked=(v,id)=>{
+      if(v===true){
+        selectedId.push(id)
+      }else{
+        let index=selectedId.indexOf(product.id)
+        selectedId.splice(index,1)
+      }
       setCheck(v)
-      selectedId.push(id)
       console.log(selectedId);
     }
   return (

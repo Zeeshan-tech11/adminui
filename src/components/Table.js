@@ -10,7 +10,8 @@ class Table extends Component {
          products:[],
          btn:0,
          initail:0,
-         selectedId:[]
+         selectedId:[],
+         checkedTop:false
       }
     }
 componentDidMount(){
@@ -59,7 +60,7 @@ handleEdit=(id,name,email,role)=>{
   )
 }
  deletteAll=(e)=>{
-  let {selectedId}=this.state
+  let {selectedId,checkedTop}=this.state
   let updated=this.state.products
   selectedId.forEach((id)=>{
     updated=updated.filter((ele)=>ele.id!==id)
@@ -70,14 +71,16 @@ handleEdit=(id,name,email,role)=>{
     ...this.state,
     products:updated,
     selectedId,
+    checkedTop:!checkedTop,
     btn:Math.ceil(updated.length/10),
 
   })
 }
 checkAll=(e)=>{
-  let {selectedId,initail,products}=this.state
+  let {selectedId,initail,products,checkedTop}=this.state
   console.log(e);
   let checkv=e.target.checked
+  checkedTop=checkv
   if(checkv){
       for(let i=initail*10;i<initail*10+10 && i<products.length;i++){
         selectedId.push(products[i].id)
@@ -88,17 +91,18 @@ checkAll=(e)=>{
   }
   this.setState({
     ...this.state,
-    selectedId
+    selectedId,
+    checkedTop
   })
   console.log(selectedId);
 }
 render(){
- let {btn,products,initail,selectedId}=this.state
+ let {btn,products,initail,selectedId,checkedTop}=this.state
     return (
         <div>
             <table>
                 <tr>
-                    <td><input type="checkbox"  onChange={(e)=>this.checkAll(e)}></input></td>
+                    <td><input type="checkbox"  onChange={(e)=>this.checkAll(e)} checked={checkedTop}></input></td>
                     <td>Name</td>
                     <td>Email</td>
                     <td>Role</td>
